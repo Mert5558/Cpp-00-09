@@ -6,21 +6,26 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:13:15 by merdal            #+#    #+#             */
-/*   Updated: 2024/11/18 14:33:19 by merdal           ###   ########.fr       */
+/*   Updated: 2024/11/19 15:49:10 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 int	main()
 {
+	PhoneBook PhoneB;
 	std::string input = "";
 
-	while (input != "EXIT")
+	PhoneB.printMessage();
+	while (input.compare("EXIT") && std::cin.good())
 	{
-		if (input == "ADD")
-		{
-			
-		}
+		if (input.compare("ADD") == 0)
+			PhoneB.addContact();
+		else if (input.compare("SEARCH") == 0)
+			PhoneB.searchContact();
+		std::cout << "Command: ";
+		std::cin >> input;
 	}
 }
