@@ -6,11 +6,17 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:35:04 by merdal            #+#    #+#             */
-/*   Updated: 2024/11/19 14:52:39 by merdal           ###   ########.fr       */
+/*   Updated: 2024/11/22 13:04:32 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+Contact::Contact()
+{}
+
+Contact::~Contact()
+{}
 
 std::string Contact::getInput(std::string prompt)
 {
@@ -36,7 +42,39 @@ void Contact::initContact(void)
 	this->darkest_secret = getInput("Darkest secret: ");
 }
 
-void Contact::intiContactId(int index)
+// getters and setters
+
+void Contact::initContactId(int index)
 {
-	this->contactId = index;
+    this->contactId = index;
+}
+
+std::string Contact::getFirstName() const
+{
+    return this->first_name;
+}
+
+std::string Contact::getLastName() const
+{
+    return this->last_name;
+}
+
+std::string Contact::getNickname() const
+{
+    return this->nickname;
+}
+
+int Contact::getContactId() const
+{
+    return this->contactId;
+}
+
+std::string Contact::getPhoneNumber() const
+{
+	return this->phone_number;
+}
+
+std::string Contact::getDarkestSecret() const
+{
+	return this->darkest_secret;
 }
