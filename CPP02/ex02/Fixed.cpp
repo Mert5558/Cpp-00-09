@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:43:07 by merdal            #+#    #+#             */
-/*   Updated: 2024/11/28 14:46:30 by merdal           ###   ########.fr       */
+/*   Updated: 2024/12/02 12:45:04 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,38 +69,38 @@ int Fixed::toInt(void) const
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {
     out << fixed.toFloat();
-    return out;
+    return (out);
 }
 
 // Comparison operators
 bool Fixed::operator>(const Fixed &other) const
 {
-    return this->value > other.value;
+    return (this->value > other.value);
 }
 
 bool Fixed::operator<(const Fixed &other) const
 {
-    return this->value < other.value;
+    return (this->value < other.value);
 }
 
 bool Fixed::operator>=(const Fixed &other) const
 {
-    return this->value >= other.value;
+    return (this->value >= other.value);
 }
 
 bool Fixed::operator<=(const Fixed &other) const
 {
-    return this->value <= other.value;
+    return (this->value <= other.value);
 }
 
 bool Fixed::operator==(const Fixed &other) const
 {
-    return this->value == other.value;
+    return (this->value == other.value);
 }
 
 bool Fixed::operator!=(const Fixed &other) const
 {
-    return this->value != other.value;
+    return (this->value != other.value);
 }
 
 // Arithmetic operators
@@ -108,28 +108,28 @@ Fixed Fixed::operator+(const Fixed &other) const
 {
     Fixed result;
     result.value = this->value + other.value;
-    return result;
+    return (result);
 }
 
 Fixed Fixed::operator-(const Fixed &other) const
 {
     Fixed result;
     result.value = this->value - other.value;
-    return result;
+    return (result);
 }
 
 Fixed Fixed::operator*(const Fixed &other) const
 {
     Fixed result;
     result.value = (this->value * other.value) >> fractionalBits;
-    return result;
+    return (result);
 }
 
 Fixed Fixed::operator/(const Fixed &other) const
 {
     Fixed result;
     result.value = (this->value << fractionalBits) / other.value;
-    return result;
+    return (result);
 }
 
 // Increment/Decrement operators
@@ -143,7 +143,7 @@ Fixed Fixed::operator++(int)  // Post-increment
 {
     Fixed temp = *this;
     this->value++;
-    return temp;
+    return (temp);
 }
 
 Fixed &Fixed::operator--()    // Pre-decrement
@@ -156,7 +156,7 @@ Fixed Fixed::operator--(int)  // Post-decrement
 {
     Fixed temp = *this;
     this->value--;
-    return temp;
+    return (temp);
 }
 
 // Static member functions
