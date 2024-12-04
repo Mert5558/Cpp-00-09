@@ -6,13 +6,13 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:16:44 by merdal            #+#    #+#             */
-/*   Updated: 2024/12/02 15:02:03 by merdal           ###   ########.fr       */
+/*   Updated: 2024/12/04 11:48:57 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-int main( void )
+int main()
 {
 	Point a(0, 0);
 	Point b(10, 0);
