@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:09:34 by merdal            #+#    #+#             */
-/*   Updated: 2024/12/06 11:15:12 by merdal           ###   ########.fr       */
+/*   Updated: 2024/12/09 13:47:17 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ ScavTrap::ScavTrap(): ClapTrap()
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-	std::cout << "ScavTrap " << name << " is created" << std::endl;;
-	//this->name = name;
+	std::cout << "ScavTrap " << name << " is created" << std::endl;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
