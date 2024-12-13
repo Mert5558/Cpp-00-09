@@ -6,13 +6,15 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:09:25 by merdal            #+#    #+#             */
-/*   Updated: 2024/12/12 11:37:19 by merdal           ###   ########.fr       */
+/*   Updated: 2024/12/13 13:29:52 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int	main( void )
 {

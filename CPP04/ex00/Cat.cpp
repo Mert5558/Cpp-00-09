@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:47 by merdal            #+#    #+#             */
-/*   Updated: 2024/12/10 14:30:52 by merdal           ###   ########.fr       */
+/*   Updated: 2024/12/10 16:01:13 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ Cat::Cat()
 
 Cat::Cat(const Cat &copy)
 {
-	this->Animal::type = copy.type;
 	std::cout << "Cat copy constructor called" << std::endl;
+	this->Animal::type = copy.type;
 }
 
 Cat &Cat::operator=(const Cat &copy)

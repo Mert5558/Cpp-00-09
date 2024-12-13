@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:38:48 by merdal            #+#    #+#             */
-/*   Updated: 2024/12/12 11:14:47 by merdal           ###   ########.fr       */
+/*   Updated: 2024/12/13 13:28:06 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ class Animal
 	public:
 		virtual ~Animal();
 
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 		std::string getType(void) const;
 };
