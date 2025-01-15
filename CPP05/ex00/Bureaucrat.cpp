@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 14:18:38 by merdal            #+#    #+#             */
-/*   Updated: 2025/01/09 13:57:35 by merdal           ###   ########.fr       */
+/*   Updated: 2025/01/14 12:39:19 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 Bureaucrat::Bureaucrat() :name("NoName"),grade(1)
 {}
 
-Bureaucrat(std::string name, int grade)
-{
-	
-}
 
 Bureaucrat::Bureaucrat(Bureaucrat const &copy)
 {
@@ -34,24 +30,33 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &copy)
 Bureaucrat::~Bureaucrat()
 {}
 
-Bureaucrat::GradeTooHighException() const throw()
+Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Grade is too high!");
 }
 
-Bureaucrat::GradeTooLowException() const throw()
+Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is to low!");
 }
 
-Bureaucrat::getName()
+Bureaucrat::Bureaucrat(std::string name, int grade)
+{
+	this->name = name;
+	if (grade < 1)
+		throw (GradeTooHighException());;
+	if (grade > 150)
+		throw (GradeTooLowException());
+	this->grade = grade;
+}
+const	std::string	Bureaucrat::getName()
 {
 	return (this->name);
 }
 
-Bureaucrat::getGrade()
+int	Bureaucrat::getGrade()
 {
-	retrun(this->grade);
+	return(this->grade);
 }
 
 Bureaucrat::incrementGrade()
