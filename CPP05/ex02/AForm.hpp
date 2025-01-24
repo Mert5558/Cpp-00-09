@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:50:31 by merdal            #+#    #+#             */
-/*   Updated: 2025/01/20 14:47:32 by merdal           ###   ########.fr       */
+/*   Updated: 2025/01/24 14:31:23 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include "Bureaucrat.hpp"
 #include <iostream>
+#include <fstream>
+#include <string>
 
 class Bureaucrat;
 
@@ -56,6 +58,7 @@ class AForm
 		int		getGradeSign() const;
 		int		getGradeExec() const;
 
+		void	checkIfSigned(const Bureaucrat &executor) const;
 		virtual void	execute(Bureaucrat const &executor) const;
 };
 

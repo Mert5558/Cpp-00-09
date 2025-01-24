@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 11:38:43 by merdal            #+#    #+#             */
-/*   Updated: 2025/01/20 15:00:09 by merdal           ###   ########.fr       */
+/*   Updated: 2025/01/24 14:33:05 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,14 @@ void	AForm::beSigned(const Bureaucrat &bureaucrat)
 	if (bureaucrat.getGrade() > this->gradeSign)
 		throw(GradeTooLowException());
 	this->sign = true;
+}
+
+void	AForm::checkIfSigned(const Bureaucrat &executor) const
+{
+	if (this->sign == false)
+		throw(AForm::FormNotSigned());
+	if (executor.getGrade() > this->getGradeExec())
+		throw(AForm::GradeTooLowException());
 }
 
 void	AForm::execute(Bureaucrat const &executor) const
