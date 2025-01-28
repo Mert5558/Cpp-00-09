@@ -1,9 +1,9 @@
 CPP = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++17
 
-NAME = form
+NAME = intern
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
