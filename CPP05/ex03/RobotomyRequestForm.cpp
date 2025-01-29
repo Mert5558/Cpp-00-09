@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 14:11:16 by merdal            #+#    #+#             */
-/*   Updated: 2025/01/24 15:05:39 by merdal           ###   ########.fr       */
+/*   Updated: 2025/01/28 14:37:15 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	std::cout << "Brrrr Brrr some drilling noises Brrrrr" << std::endl;
 	std::cout << "Brrrr Brrr some drilling noises Brrrrr" << std::endl;
 	std::cout << "Brrrr Brrr some drilling noises Brrrrr" << std::endl;
+	srand(time(NULL));
 	randomValue = rand() % 2;
 	if (randomValue == 0)
 		std::cout << this->target << "was randomized succesfully" << std::endl;
