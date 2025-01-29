@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 14:18:38 by merdal            #+#    #+#             */
-/*   Updated: 2025/01/14 12:39:19 by merdal           ###   ########.fr       */
+/*   Updated: 2025/01/15 14:53:02 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,47 +27,52 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &copy)
 	return (*this);
 }
 
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat)
+{
+	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	return (os);
+}
+
 Bureaucrat::~Bureaucrat()
 {}
 
-Bureaucrat::GradeTooHighException::what() const throw()
+const char*	Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Grade is too high!");
 }
 
-Bureaucrat::GradeTooLowException::what() const throw()
+const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is to low!");
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) :name(name)
 {
-	this->name = name;
 	if (grade < 1)
 		throw (GradeTooHighException());;
 	if (grade > 150)
 		throw (GradeTooLowException());
 	this->grade = grade;
 }
-const	std::string	Bureaucrat::getName()
+const	std::string	Bureaucrat::getName() const
 {
 	return (this->name);
 }
 
-int	Bureaucrat::getGrade()
+int	Bureaucrat::getGrade() const
 {
 	return(this->grade);
 }
 
-Bureaucrat::incrementGrade()
+void	Bureaucrat::incrementGrade()
 {
 	if (this->grade -1 < 1)
-		throw (GradeTooHigh());
+		throw (GradeTooHighException());
 	this->grade--;
 }
-Bureaucrat::decrementGrade()
+void	Bureaucrat::decrementGrade()
 {
 	if (this->grade + 1 < 150)
-		throw (GradeTooLow());
+		throw (GradeTooLowException());
 	this->grade++;
 }

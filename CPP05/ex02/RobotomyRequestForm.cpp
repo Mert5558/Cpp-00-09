@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 14:11:16 by merdal            #+#    #+#             */
-/*   Updated: 2025/01/24 14:45:04 by merdal           ###   ########.fr       */
+/*   Updated: 2025/01/28 14:36:23 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,19 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	
+	int randomValue;
+	this->checkIfSigned(executor);
+	std::cout << "Brrrr Brrr some drilling noises Brrrrr" << std::endl;
+	std::cout << "Brrrr Brrr some drilling noises Brrrrr" << std::endl;
+	std::cout << "Brrrr Brrr some drilling noises Brrrrr" << std::endl;
+	std::cout << "Brrrr Brrr some drilling noises Brrrrr" << std::endl;
+	std::cout << "Brrrr Brrr some drilling noises Brrrrr" << std::endl;
+	srand(time(NULL));
+	randomValue = rand() % 2;
+	if (randomValue == 0)
+		std::cout << this->target << " was randomized succesfully" << std::endl;
+	else
+		std::cout << this->target << " BOOOOOOM robotomizing failed" << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

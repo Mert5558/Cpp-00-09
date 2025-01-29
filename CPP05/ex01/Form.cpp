@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 11:38:43 by merdal            #+#    #+#             */
-/*   Updated: 2025/01/16 14:09:44 by merdal           ###   ########.fr       */
+/*   Updated: 2025/01/29 13:17:56 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ Form::Form(const Form &copy): name(copy.name), sign(false), gradeSign(copy.grade
 Form::Form(std::string name, int gradeSign, int gradeExec): name(name), sign(false), gradeSign(gradeSign), gradeExec(gradeExec)
 {
 	if (gradeSign > 150)
-		throw (GradeTooHighException());
+		throw (GradeTooLowException());
 	if (gradeSign < 1)
-		throw (GradeTooLowException());
-	if (gradeExec > 150)
 		throw (GradeTooHighException());
-	if (gradeExec < 1)
+	if (gradeExec > 150)
 		throw (GradeTooLowException());
+	if (gradeExec < 1)
+		throw (GradeTooHighException());
 }
 
 Form &Form::operator=(const Form &copy)

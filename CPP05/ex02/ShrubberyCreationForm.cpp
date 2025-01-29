@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:08:22 by merdal            #+#    #+#             */
-/*   Updated: 2025/01/24 14:23:43 by merdal           ###   ########.fr       */
+/*   Updated: 2025/01/24 15:14:26 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &c
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
+	this->checkIfSigned(executor);
+	
 	if (this->getGradeExec() >= executor.getGrade())
 	{
 		std::ofstream outfile((executor.getName() + "_shrubbery").c_str());
@@ -41,13 +43,13 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		else
 		{
 			outfile << "					&&& &&  & &&\n";
-			outfile << "				&& &\/&\|& ()|/ @,&\n";
-			outfile << "			   &\/(/&/&||/& /_/)_&/_&\n";
-			outfile << "			  &() &\/&|()|/&\/ ''% & ()\n";
-			outfile << "			 &_\_&&_\ |& |&&/&__%_/_& &&\n";
+			outfile << "				&& &ll&l|& ()|/ @,&\n";
+			outfile << "			   &ll(/&/&||/& /_/)_&/_&\n";
+			outfile << "			  &() &ll&|()|/&ll ''% & ()\n";
+			outfile << "			 &_l_&&_l |& |&&/&__%_/_& &&\n";
 			outfile << "			&&   && & &| &| /& & % ()& /&&\n";
-			outfile << "			()&_---()&\&\|&&-&&--%---()~\n";
-			outfile << "				&&     \|||\n";
+			outfile << "			()&_---()&l&l|&&-&&--%---()~\n";
+			outfile << "				&&     l|||\n";
 			outfile << "						|||\n";
 			outfile << "						|||\n";
 			outfile << "						|||\n";

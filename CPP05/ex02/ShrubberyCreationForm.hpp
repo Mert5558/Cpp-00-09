@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:03:53 by merdal            #+#    #+#             */
-/*   Updated: 2025/01/24 14:22:05 by merdal           ###   ########.fr       */
+/*   Updated: 2025/01/24 15:13:07 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,4 @@ class ShrubberyCreationForm: public AForm
 		~ShrubberyCreationForm();
 
 		void execute(Bureaucrat const &executor) const;		
-}
+};
