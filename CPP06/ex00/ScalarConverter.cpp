@@ -97,7 +97,7 @@ void	ScalarConverter::convertInt(std::string str)
 	std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
 }
-
+//finish this
 void	ScalarConverter::convertFloat(std::string str)
 {
 	
