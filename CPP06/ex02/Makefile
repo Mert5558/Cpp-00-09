@@ -1,9 +1,9 @@
 CPP = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++17
 
-NAME = serialize
+NAME = base
 
-SRC = main.cpp Serializer.cpp
+SRC = main.cpp Base.cpp A.cpp B.cpp C.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
