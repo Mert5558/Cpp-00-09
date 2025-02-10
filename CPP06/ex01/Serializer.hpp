@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:31:33 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/06 15:06:46 by merdal           ###   ########.fr       */
+/*   Updated: 2025/02/10 14:15:50 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Serializer
 		Serializer &operator=(const Serializer &copy);
 		~Serializer();
 	
-		uintptr_t serialize(Data* ptr);
-		Data* deserialize(uintptr_t raw);
+		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
 		
 	private:
 		
