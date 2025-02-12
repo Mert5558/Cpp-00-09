@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 15:20:12 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/11 13:17:17 by merdal           ###   ########.fr       */
+/*   Updated: 2025/02/12 15:22:27 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 class Array
 {
+	public:
+		Array();
+		Array(unsigned int n);
+		Array(const Array &copy);
+		~Array();
+	
 	
 };
