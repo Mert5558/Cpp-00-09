@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 12:08:06 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/06 13:03:51 by merdal           ###   ########.fr       */
+/*   Updated: 2025/02/13 14:51:45 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ void	ScalarConverter::convertInt(std::string str)
 	if (*endptr != '\0' || num < -2147483648 || num > 2147483647)
 	{
 		std::cout << "int: Impossible" << std::endl;
+		std::cout << "float: Impossible" << std::endl;
+		std::cout << "double: Impossible" << std::endl;
 		return;
 	}
 	std::cout << "int: " << i << std::endl;
@@ -108,7 +110,7 @@ void	ScalarConverter::convertFloat(std::string str)
 		std::cout << "double: " << str.substr(0, str.length() - 1) << std::endl;
 		return;
 	}
-	
+
 	char *endptr;
 	float f = std::strtof(str.c_str(), &endptr);
 	int i = static_cast<int>(f);
