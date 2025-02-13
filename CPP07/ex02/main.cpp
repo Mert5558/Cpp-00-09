@@ -6,12 +6,12 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 13:14:34 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/11 13:14:37 by merdal           ###   ########.fr       */
+/*   Updated: 2025/02/13 13:15:01 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)
