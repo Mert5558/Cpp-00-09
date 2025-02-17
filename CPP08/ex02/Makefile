@@ -1,9 +1,9 @@
 CPP = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++17
 
-NAME = span
+NAME = mutant
 
-SRC = main.cpp Span.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -23,3 +23,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
