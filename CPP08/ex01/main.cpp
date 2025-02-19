@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 12:26:31 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/17 14:55:35 by merdal           ###   ########.fr       */
+/*   Updated: 2025/02/19 12:30:04 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int main()
 	sp.addNumber(9);
 	sp.addNumber(11);
 
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
+	std::cout << "shortest span: " <<sp.shortestSpan() << std::endl;
+	std::cout << "longest span: " << sp.longestSpan() << std::endl;
 	
 	return (0);
 }

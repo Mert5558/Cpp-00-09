@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 12:26:19 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/17 15:16:18 by merdal           ###   ########.fr       */
+/*   Updated: 2025/02/19 12:27:12 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Span::~Span()
 
 void Span::addNumber(size_t n)
 {
-	if (v.size() >= n)
+	if (v.size() >= this->n)
 		throw SpanFullException();
 	v.push_back(n);
 }
