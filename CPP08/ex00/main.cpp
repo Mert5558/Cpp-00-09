@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 12:22:55 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/17 12:22:57 by merdal           ###   ########.fr       */
+/*   Updated: 2025/02/21 14:34:19 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <list>
 
 
-int main() {
+int main()
+{
 	std::vector<int> vec = {10, 20, 30, 40, 50};
 	std::list<int> lst = {5, 15, 25, 35, 45};
 
@@ -23,17 +24,23 @@ int main() {
 	for (int n : vec) std::cout << n << " ";
 	std::cout << std::endl;
 
-	try {
+	try
+	{
 		auto it = easyfind(vec, 30);
 		std::cout << "Found " << *it << " at index " << std::distance(vec.begin(), it) << std::endl;
-	} catch (const std::exception& e) {
+	}
+	catch (const std::exception& e)
+	{
 		std::cerr << e.what() << std::endl;
 	}
 
-	try {
+	try
+	{
 		auto it = easyfind(vec, 99);
-		std::cout << "Found " << *it << std::endl; // Won't reach here if exception is thrown
-	} catch (const std::exception& e) {
+		std::cout << "Found " << *it << std::endl;
+	}
+	catch (const std::exception& e)
+	{
 		std::cerr << e.what() << std::endl;
 	}
 
@@ -41,19 +48,25 @@ int main() {
 	for (int n : lst) std::cout << n << " ";
 	std::cout << std::endl;
 
-	try {
+	try
+	{
 		auto it = easyfind(lst, 15);
-		std::cout << "Found " << *it << std::endl;
-	} catch (const std::exception& e) {
+		std::cout << "Found " << *it << " at index " << std::distance(lst.begin(), it) << std::endl;
+	}
+	catch (const std::exception& e)
+	{
 		std::cerr << e.what() << std::endl;
 	}
 
-	try {
+	try
+	{
 		auto it = easyfind(lst, 100);
 		std::cout << "Found " << *it << std::endl;
-	} catch (const std::exception& e) {
+	}
+	catch (const std::exception& e)
+	{
 		std::cerr << e.what() << std::endl;
 	}
 
-	return 0;
+	return (0);
 }

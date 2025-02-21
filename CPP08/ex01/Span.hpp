@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 12:26:23 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/17 15:07:34 by merdal           ###   ########.fr       */
+/*   Updated: 2025/02/21 15:11:57 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Span
 		~Span();
 
 		void addNumber(size_t n);
+		void addRange(std::vector<int>::iterator start, std::vector<int>::iterator end);
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
 

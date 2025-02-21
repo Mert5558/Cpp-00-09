@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 12:26:19 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/19 12:27:12 by merdal           ###   ########.fr       */
+/*   Updated: 2025/02/21 15:12:39 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@ void Span::addNumber(size_t n)
 	v.push_back(n);
 }
 
+void Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+	if (std::distance(start, end) + v.size() > n)
+		throw SpanFullException();
+	
+	v.insert(v.end(), start, end);
+}
+
 unsigned int Span::shortestSpan()
 {
 	if (v.size() < 2)
@@ -63,7 +71,7 @@ unsigned int Span::longestSpan()
 {
 	if (v.size() < 2)
 		throw NotEnoughNumException();
-	
+
 	std::vector<int>::const_iterator min = std::min_element(v.begin(), v.end());
 	std::vector<int>::const_iterator max = std::max_element(v.begin(), v.end());
 

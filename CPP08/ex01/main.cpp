@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 12:26:31 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/19 12:30:04 by merdal           ###   ########.fr       */
+/*   Updated: 2025/02/21 15:32:10 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,16 @@ int main()
 
 	std::cout << "shortest span: " <<sp.shortestSpan() << std::endl;
 	std::cout << "longest span: " << sp.longestSpan() << std::endl;
+	
+	std::cout << "------------------------------------" << std::endl;
+	
+	Span range = Span(10);
+
+	std::vector<int> nums = {5, 31, 8, 17, 0, 90, 13, 4, 58, 61};
+	range.addRange(nums.begin(), nums.end());
+
+	std::cout << "shortest span: " <<range.shortestSpan() << std::endl;
+	std::cout << "longest span: " << range.longestSpan() << std::endl;
 	
 	return (0);
 }
