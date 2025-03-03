@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 13:40:06 by merdal            #+#    #+#             */
-/*   Updated: 2025/03/03 12:54:52 by merdal           ###   ########.fr       */
+/*   Updated: 2025/03/03 14:53:03 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ int main(int argc, char **argv)
 
 	PmergeMe sorter;
 	sorter.parseInput(argv);
-	// sorter.printContainer("Before: ");
-	// sorter.printContainer("After: ");
-	sorter.measureTime();
+	sorter.sort();
 
 	return (0);
 }

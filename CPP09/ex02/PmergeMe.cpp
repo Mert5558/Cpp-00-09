@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 13:39:36 by merdal            #+#    #+#             */
-/*   Updated: 2025/03/03 13:06:42 by merdal           ###   ########.fr       */
+/*   Updated: 2025/03/03 14:52:34 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,50 +56,92 @@ void PmergeMe::parseInput(char **argv)
 	}
 }
 
-void PmergeMe::mergeInsertionSortVector()
+void PmergeMe::mergeInsertionSortVector(std::vector<int> &arr)
 {
-	if (vec.size() < 2)
+	if (arr.size() <= 1)
 		return;
+	if (arr.size() == 2)
+	{
+		if (arr[0] > arr[1])
+			std::swap(arr[0], arr[1]);
+		return;
+	}
 
-	std::vector<int> left(vec.begin(), vec.begin() + vec.size() /2);
-	std::vector<int> right(vec.begin() + vec.size() / 2, vec.end());
+	std::vector<int> winners;
+	std::vector<int> losers;
+
+	size_t i = 0;
 	
-	PmergeMe leftSort;
-	PmergeMe rightSort;
-
-	leftSort.vec = left;
-	rightSort.vec = right;
+	for(; i + 1 < arr.size(); i+= 2)
+	{
+		if (arr[i] < arr[i+1])
+		{
+			winners.push_back(arr[i+1]);
+			losers.push_back(arr[i]);
+		}
+		else
+		{
+			winners.push_back(arr[i]);
+			losers.push_back(arr[i+1]);
+		}
+	}
 	
-	leftSort.mergeInsertionSortVector();
-	rightSort.mergeInsertionSortVector();
+	if (i < arr.size())
+		winners.push_back(arr[i]);
+	
+	mergeInsertionSortVector(winners);
 
-	vec.clear();
-	std::merge(leftSort.vec.begin(), leftSort.vec.end(),
-				rightSort.vec.begin(), rightSort.vec.end(),
-				std::back_inserter(vec));
+	for(size_t j = 0; j < losers.size(); j++)
+	{
+		int val = losers[j];
+		auto it = std::lower_bound(winners.begin(), winners.end(), val);
+		winners.insert(it, val);
+	}
+	arr = winners;
 }
 
-void PmergeMe::mergeInsertionSortDeque()
+void PmergeMe::mergeInsertionSortDeque(std::deque<int> &arr)
 {
-	if (deq.size() < 2)
+	if (arr.size() <= 1)
 		return;
+	if (arr.size() == 2)
+	{
+		if (arr[0] > arr[1])
+			std::swap(arr[0], arr[1]);
+		return;
+	}
 
-	std::deque<int> left(deq.begin(), deq.begin() + deq.size() /2);
-	std::deque<int> right(deq.begin() + deq.size() / 2, deq.end());
+	std::deque<int> winners;
+	std::deque<int> losers;
+
+	size_t i = 0;
 	
-	PmergeMe leftSort;
-	PmergeMe rightSort;
-
-	leftSort.deq = left;
-	rightSort.deq = right;
+	for(; i + 1 < arr.size(); i+= 2)
+	{
+		if (arr[i] < arr[i+1])
+		{
+			winners.push_back(arr[i+1]);
+			losers.push_back(arr[i]);
+		}
+		else
+		{
+			winners.push_back(arr[i]);
+			losers.push_back(arr[i+1]);
+		}
+	}
 	
-	leftSort.mergeInsertionSortDeque();
-	rightSort.mergeInsertionSortDeque();
+	if (i < arr.size())
+		winners.push_back(arr[i]);
+	
+	mergeInsertionSortDeque(winners);
 
-	deq.clear();
-	std::merge(leftSort.deq.begin(), leftSort.deq.end(),
-				rightSort.deq.begin(), rightSort.deq.end(),
-				std::back_inserter(deq));
+	for(size_t j = 0; j < losers.size(); j++)
+	{
+		int val = losers[j];
+		auto it = std::lower_bound(winners.begin(), winners.end(), val);
+		winners.insert(it, val);
+	}
+	arr = winners;
 }
 
 void PmergeMe::printContainer(std::string when) const
@@ -110,21 +152,27 @@ void PmergeMe::printContainer(std::string when) const
 	std::cout << std::endl;
 }
 
-void PmergeMe::measureTime()
+void PmergeMe::sort()
 {
 	clock_t start;
 	clock_t end;
 
 	printContainer("Before: ");
+	std::vector<int> vecCopy = vec;
 	start = clock();
-	mergeInsertionSortVector();
+	mergeInsertionSortVector(vecCopy);
 	end = clock();
 	double vectorTime = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000;
 
+	std::deque<int> deqCopy = deq;
 	start = clock();
-	mergeInsertionSortDeque();
+	mergeInsertionSortDeque(deqCopy);
 	end = clock();
 	double dequeTime = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000;
+
+	vec = vecCopy;
+	deq.assign(deqCopy.begin(), deqCopy.end());
+	
 	printContainer("After: ");
 
 	std::cout << "Time to process " << vec.size() << " elements with std::vector: " << vectorTime << " us" << std::endl;

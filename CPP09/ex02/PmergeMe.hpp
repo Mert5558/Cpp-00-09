@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 13:38:51 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/27 15:47:43 by merdal           ###   ########.fr       */
+/*   Updated: 2025/03/03 14:52:42 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ class PmergeMe
 		~PmergeMe();
 
 	void parseInput(char **argv);
-	void mergeInsertionSortVector();
-	void mergeInsertionSortDeque();
+	void mergeInsertionSortVector(std::vector<int> &arr);
+	void mergeInsertionSortDeque(std::deque<int> &arr);
 	void printContainer(std::string when) const;
-	void measureTime();
+	void sort();
 	static bool isValidNum(const std::string &str);
 };
