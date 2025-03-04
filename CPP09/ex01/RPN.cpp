@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 14:37:20 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/26 15:13:25 by merdal           ###   ########.fr       */
+/*   Updated: 2025/03/04 14:53:52 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int RPN::processInput(const std::string &input)
 		else
 		{
 			std::cerr << "Error: Invalid token! '" << token << "'" << std::endl;
-			exit(1);			
+			exit(1);
 		}
 	}
 

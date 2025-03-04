@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:38:42 by merdal            #+#    #+#             */
-/*   Updated: 2025/02/25 15:17:18 by merdal           ###   ########.fr       */
+/*   Updated: 2025/03/04 13:39:53 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,14 @@ bool BitcoinExchange::isValidDate(const std::string &date)
 	int day;
 
 	if (sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day) != 3)
+		return (false);
+
+	if (month < 1 || month > 12)
+		return (false);
+	
+	int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+	if (day < 1 || day > daysInMonth[month - 1])
 		return (false);
 
 	return (true);
