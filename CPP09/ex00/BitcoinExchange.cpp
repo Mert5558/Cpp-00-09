@@ -6,7 +6,7 @@
 /*   By: merdal <merdal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:38:42 by merdal            #+#    #+#             */
-/*   Updated: 2025/03/04 13:39:53 by merdal           ###   ########.fr       */
+/*   Updated: 2025/03/05 11:54:12 by merdal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void BitcoinExchange::readInput(std::string file)
 		std::stringstream ss(line);
 		if (!std::getline(ss, date, '|') || !(ss >> valueStr))
 		{
-			std::cerr << "Error: Bad input1 => " << line << std::endl;
+			std::cerr << "Error: Bad input => " << line << std::endl;
 			continue;
 		}
 
@@ -87,7 +87,7 @@ void BitcoinExchange::readInput(std::string file)
 
 		if (!isValidDate(date))
 		{
-			std::cerr << "Error: Bad input2 => " << date << std::endl;
+			std::cerr << "Error: Bad input => " << date << std::endl;
 			continue;
 		}
 
